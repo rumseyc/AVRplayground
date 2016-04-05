@@ -7,12 +7,11 @@ program the avr
 
 #include <avr/io.h>
 #include <inttypes.h>
+#include <util/delay.h>
 
 // PIN DEFINITIONS:
 //
 // PC4 -- LED anode
-
-void delay_ms();
 
 int main() {
   // LED as output
@@ -24,20 +23,15 @@ int main() {
     PORTC |= (1<<PC4);
 
     //delay for time to let the light stay on
-    delay_ms();
+    _delay_ms(500);
 
     // turn off LED
     PORTC &= ~(1<<PC4);
 
     //delay for time to let the light stay off
-    delay_ms();
+    _delay_ms(500);
 
   }
 
   return 0;
-}
-
-
-void delay_ms(){
-  for( int i = 0; i < F_CPU; i++);
 }
