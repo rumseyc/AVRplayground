@@ -10,7 +10,7 @@ Simple test to move a DC brushless motor with PWM
 
 int main() {
 
-  uin8_t motor_speed = 0xFF;
+  uint8_t motor_speed = 0xFF;
 
   DDRB |= _BV(PB1); //Set PB1 to output
   //Clear OCnA register on compare match
